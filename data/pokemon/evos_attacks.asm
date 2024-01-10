@@ -2723,14 +2723,13 @@ GirafarigEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL
-	db 1, CONFUSION
-	db 1, STOMP
-	db 7, CONFUSION
-	db 13, STOMP
-	db 20, AGILITY
-	db 30, BATON_PASS
-	db 41, PSYBEAM
-	db 54, CRUNCH
+	db 9, CONFUSION
+	db 14, STOMP
+	db 21, AGILITY
+	db 26, BATON_PASS
+	db 33, PSYBEAM
+	db 38, HEADBUTT 
+	db 43, CRUNCH
 	db 0 ; no more level-up moves
 
 PinecoEvosAttacks:
@@ -2775,13 +2774,14 @@ DunsparceEvosAttacks:
 GligarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 6, SAND_ATTACK
-	db 13, HARDEN
-	db 20, QUICK_ATTACK
-	db 28, FAINT_ATTACK
-	db 36, SLASH
-	db 44, SCREECH
-	db 52, GUILLOTINE
+	db 1, SAND_ATTACK
+	db 6, HARDEN
+	db 13, QUICK_ATTACK
+	db 20, FAINT_ATTACK
+	db 28, SLASH
+	db 36, SCREECH
+	db 44, EARTHQUAKE
+	db 55, GUILLOTINE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
@@ -2868,25 +2868,25 @@ HeracrossEvosAttacks:
 	db 1, LEER
 	db 6, HORN_ATTACK
 	db 12, ENDURE
-	db 19, FURY_ATTACK
-	db 27, COUNTER
-	db 35, TAKE_DOWN
-	db 44, REVERSAL
-	db 54, MEGAHORN
+	db 18, FURY_ATTACK
+	db 25, COUNTER
+	db 32, TAKE_DOWN
+	db 39, REVERSAL
+	db 47, MEGAHORN
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
-	db 9, QUICK_ATTACK
-	db 17, SCREECH
-	db 25, FAINT_ATTACK
-	db 33, FURY_SWIPES
-	db 41, AGILITY
-	db 49, SLASH
-	db 57, BEAT_UP
-	db 65, METAL_CLAW
+	db 1, QUICK_ATTACK
+	db 7, SCREECH
+	db 14, FAINT_ATTACK
+	db 22, FURY_SWIPES
+	db 30, METAL_CLAW
+	db 37, AGILITY
+	db 44, SLASH
+	db 52, BEAT_UP
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:
