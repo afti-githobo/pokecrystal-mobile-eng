@@ -3,7 +3,7 @@ DEF GOLDENRODGAMECORNER_TM14_COINS      EQU 5500
 DEF GOLDENRODGAMECORNER_TM38_COINS      EQU 5500
 DEF GOLDENRODGAMECORNER_ABRA_COINS      EQU 100
 DEF GOLDENRODGAMECORNER_CUBONE_COINS    EQU 800
-DEF GOLDENRODGAMECORNER_WOBBUFFET_COINS EQU 1500
+DEF GOLDENRODGAMECORNER_STARTER_COINS   EQU 2500
 
 	object_const_def
 	const GOLDENRODGAMECORNER_CLERK
@@ -167,12 +167,32 @@ GoldenrodGameCornerPrizeMonVendorScript:
 .loop
 	writetext GoldenrodGameCornerPrizeVendorWhichPrizeText
 	special DisplayCoinCaseBalance
-	loadmenu .MenuHeader
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .Totodile
+	checkevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	iftrue .Cyndaquil
+	loadmenu .MenuHeaderSquirtle
 	verticalmenu
 	closewindow
 	ifequal 1, .Abra
 	ifequal 2, .Cubone
-	ifequal 3, .Wobbuffet
+	ifequal 3, .Squirtle
+	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+.Cyndaquil
+	loadmenu .MenuHeaderBulbasaur
+	verticalmenu
+	closewindow
+	ifequal 1, .Abra
+	ifequal 2, .Cubone
+	ifequal 3, .Bulbasaur
+	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+.Totodile
+	loadmenu .MenuHeaderCharmander
+	verticalmenu
+	closewindow
+	ifequal 1, .Abra
+	ifequal 2, .Cubone
+	ifequal 3, .Charmander
 	sjump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
 .Abra:
@@ -211,36 +231,100 @@ GoldenrodGameCornerPrizeMonVendorScript:
 	takecoins GOLDENRODGAMECORNER_CUBONE_COINS
 	sjump .loop
 
-.Wobbuffet:
-	checkcoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
+.Bulbasaur:
+	checkcoins GOLDENRODGAMECORNER_STARTER_COINS
 	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
 	readvar VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
-	getmonname STRING_BUFFER_3, WOBBUFFET
+	getmonname STRING_BUFFER_3, BULBASAUR
 	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
 	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
 	waitbutton
-	setval WOBBUFFET
+	setval BULBASAUR
 	special GameCornerPrizeMonCheckDex
-	givepoke WOBBUFFET, 15
-	takecoins GOLDENRODGAMECORNER_WOBBUFFET_COINS
+	givepoke BULBASAUR, 15
+	takecoins GOLDENRODGAMECORNER_STARTER_COINS
 	sjump .loop
 
-.MenuHeader:
+.Charmander:
+	checkcoins GOLDENRODGAMECORNER_STARTER_COINS
+	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	getmonname STRING_BUFFER_3, CHARMANDER
+	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
+	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
+	waitbutton
+	setval CHARMANDER
+	special GameCornerPrizeMonCheckDex
+	givepoke CHARMANDER, 15
+	takecoins GOLDENRODGAMECORNER_STARTER_COINS
+	sjump .loop
+
+.Squirtle:
+	checkcoins GOLDENRODGAMECORNER_STARTER_COINS
+	ifequal HAVE_LESS, GoldenrodGameCornerPrizeVendor_NotEnoughCoinsScript
+	readvar VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, GoldenrodGameCornerPrizeMonVendor_NoRoomForPrizeScript
+	getmonname STRING_BUFFER_3, SQUIRTLLE
+	scall GoldenrodGameCornerPrizeVendor_ConfirmPurchaseScript
+	iffalse GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
+	waitsfx
+	playsound SFX_TRANSACTION
+	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
+	waitbutton
+	setval SQUIRTLE
+	special GameCornerPrizeMonCheckDex
+	givepoke SQUIRTLE, 15
+	takecoins GOLDENRODGAMECORNER_STARTER_COINS
+	sjump .loop
+
+.MenuHeaderBulbasaur:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 0, 2, 17, TEXTBOX_Y - 1
-	dw .MenuData
+	dw .MenuDataBulbasaur
 	db 1 ; default option
 
-.MenuData:
+.MenuDataBulbasaur:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
 	db "ABRA        100@"
 	db "CUBONE      800@"
-	db "WOBBUFFET  1500@"
+	db "BULBASAUR  2500@"
+	db "CANCEL@"
+
+.MenuHeaderSquirtle:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 17, TEXTBOX_Y - 1
+	dw .MenuDataSquirtle
+	db 1 ; default option
+
+.MenuDataSquirtle:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "ABRA        100@"
+	db "CUBONE      800@"
+	db "SQUIRTLE   2500@"
+	db "CANCEL@"
+
+.MenuHeaderCharmander:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, 17, TEXTBOX_Y - 1
+	dw .MenuDataCharmander
+	db 1 ; default option
+
+.MenuDataCharmander:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "ABRA        100@"
+	db "CUBONE      800@"
+	db "CHARMANDER 2500@"
 	db "CANCEL@"
 
 GoldenrodGameCornerPharmacistScript:
