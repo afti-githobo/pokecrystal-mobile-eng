@@ -41,6 +41,13 @@ OlivineCafeStrengthSailorText:
 	para "Here, use this"
 	line "and teach them"
 	cont "STRENGTH!"
+
+	para "It won't do you"
+	line "any good without"
+	cont "the BADGE from"
+	
+	para "OLIVINE's GYM,"
+	line "though!"
 	done
 
 OlivineCafeStrengthSailorText_GotStrength:
