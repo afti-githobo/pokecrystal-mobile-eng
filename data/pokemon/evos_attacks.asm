@@ -771,12 +771,12 @@ GrowlitheEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, ROAR
-	db 9, EMBER
-	db 18, LEER
-	db 26, TAKE_DOWN
-	db 34, FLAME_WHEEL
-	db 42, AGILITY
-	db 50, FLAMETHROWER
+	db 6, EMBER
+	db 14, LEER
+	db 21, TAKE_DOWN
+	db 29, FLAME_WHEEL
+	db 36, AGILITY
+	db 44, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 ArcanineEvosAttacks:
@@ -1060,13 +1060,13 @@ SlowpokeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
-	db 6, GROWL
-	db 15, WATER_GUN
-	db 20, CONFUSION
-	db 29, DISABLE
-	db 34, HEADBUTT
-	db 43, AMNESIA
-	db 48, PSYCHIC_M
+	db 1, GROWL
+	db 6, WATER_GUN
+	db 15, CONFUSION
+	db 20, DISABLE
+	db 29, HEADBUTT
+	db 34, AMNESIA
+	db 43, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 SlowbroEvosAttacks:
@@ -1075,14 +1075,13 @@ SlowbroEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, WATER_GUN
-	db 6, GROWL
-	db 15, WATER_GUN
-	db 20, CONFUSION
-	db 29, DISABLE
-	db 34, HEADBUTT
-	db 37, WITHDRAW
-	db 46, AMNESIA
-	db 54, PSYCHIC_M
+	db 6, WATER_GUN
+	db 15, CONFUSION
+	db 20, DISABLE
+	db 29, HEADBUTT
+	db 34, WITHDRAW
+	db 37, AMNESIA
+	db 46, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MagnemiteEvosAttacks:
@@ -2685,13 +2684,14 @@ SlowkingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
-	db 6, GROWL
-	db 15, WATER_GUN
-	db 20, CONFUSION
-	db 29, DISABLE
-	db 34, HEADBUTT
-	db 43, SWAGGER
-	db 48, PSYCHIC_M
+	db 1, GROWL
+	db 6, WATER_GUN
+	db 15, CONFUSION
+	db 20, DISABLE
+	db 29, HEADBUTT
+	db 34, WITHDRAW
+	db 37, SWAGGER
+	db 46, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:
