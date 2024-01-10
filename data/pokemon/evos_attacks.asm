@@ -2402,11 +2402,12 @@ NatuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, LEER
-	db 10, NIGHT_SHADE
-	db 20, TELEPORT
+	db 7, NIGHT_SHADE
+	db 15, CONFUSION
+	db 22, TELEPORT
 	db 30, FUTURE_SIGHT
-	db 40, CONFUSE_RAY
-	db 50, PSYCHIC_M
+	db 37, CONFUSE_RAY
+	db 45, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 XatuEvosAttacks:
@@ -2414,11 +2415,13 @@ XatuEvosAttacks:
 	db 1, PECK
 	db 1, LEER
 	db 1, NIGHT_SHADE
-	db 10, NIGHT_SHADE
-	db 20, TELEPORT
-	db 35, FUTURE_SIGHT
-	db 50, CONFUSE_RAY
-	db 65, PSYCHIC_M
+	db 1, CONFUSION
+	db 7, NIGHT_SHADE
+	db 15, CONFUSION
+	db 22, TELEPORT
+	db 31, FUTURE_SIGHT
+	db 39, CONFUSE_RAY
+	db 48, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MareepEvosAttacks:
@@ -2584,22 +2587,22 @@ SunkernEvosAttacks:
 	db EVOLVE_ITEM, SUN_STONE, SUNFLORA
 	db 0 ; no more evolutions
 	db 1, ABSORB
-	db 4, GROWTH
-	db 10, MEGA_DRAIN
+	db 6, GROWTH
+	db 13, MEGA_DRAIN
 	db 19, SUNNY_DAY
-	db 31, SYNTHESIS
-	db 46, GIGA_DRAIN
+	db 26, SYNTHESIS
+	db 32, GIGA_DRAIN
 	db 0 ; no more level-up moves
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, ABSORB
 	db 1, POUND
-	db 4, GROWTH
-	db 10, RAZOR_LEAF
+	db 6, GROWTH
+	db 13, RAZOR_LEAF
 	db 19, SUNNY_DAY
-	db 31, PETAL_DANCE
-	db 46, SOLARBEAM
+	db 26, PETAL_DANCE
+	db 32, SOLARBEAM
 	db 0 ; no more level-up moves
 
 YanmaEvosAttacks:
